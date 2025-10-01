@@ -17,9 +17,21 @@ private String owner;
         this.phoneNumber = "";
         this.owner = "";
     }
+    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner) {
+        this.serialNumber = serialNumber; // 'this' refers to the current object being created. 'serialNumber' is the property we're setting
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
 
+}
     public void dial(String phoneNumber) {
-        System.out.println(getOwner() + "'s phone is calling" + phoneNumber);
+        System.out.println(getOwner() + "'s phone is calling " + phoneNumber);
+    }
+    public void dial(CellPhone phone) {
+     String phoneNumber = phone.getPhoneNumber();
+
+     dial(phoneNumber);
     }
     public int getSerialNumber() { // start of getters, which let us read (get) the value of a private property.
         return this.serialNumber;
